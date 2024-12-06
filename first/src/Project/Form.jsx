@@ -7,6 +7,25 @@ const Form = () => {
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const handleClick = () => {
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+ 
+    if (!passwordRegex.test(password)) {
+      alert(
+        "Password must be at least 8 characters long, include at least one letter and one number."
+      );
+      return;
+    }
+ 
+    console.log("Email:", email);
+    console.log("Password:", password);
+    alert("Login successful!");
+    // Add your login logic here
+  };
  
   return (
 <div className="login-form-container">
